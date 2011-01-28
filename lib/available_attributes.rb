@@ -1,4 +1,4 @@
-#for more informations about attributes look at http://www.mojeid.cz/page/800/jak-zavest-mojeid-/
+# for more informations about attributes look at http://www.mojeid.cz/page/800/jak-zavest-mojeid-/
 
 module MojeIDAttributes
   AVAILABLE_ATTRIBUTES = %w(

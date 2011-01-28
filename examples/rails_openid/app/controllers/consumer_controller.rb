@@ -2,23 +2,29 @@ class ConsumerController < ApplicationController
   layout nil
 
   def index
-    # render an openid form
   end
 
 
-  # EXAMPLE HOW TO RETRIEVE DATA FROM MOJEID
+  # Example how to retrieve data from mojeID
   def start_get_data
     begin
       identifier = params[:openid_identifier].to_s + params[:openid_domain].to_s
+
+      # First, try to create request to mojeID server with user identifier
       @moje_id = MojeID.fetch_request(consumer, identifier)
     rescue OpenID::OpenIDError => e
       flash[:error] = "Discovery failed for #{identifier}: #{e}"
       return redirect_to :action => 'index'
     end
-    
+
+    # Next you can add to your request all attributes, you would like to get.
     @moje_id.add_attributes(MojeIDAttributes::AVAILABLE_ATTRIBUTES[0..3])
+
+    # Setup your realm and return_to path.
     @moje_id.return_to = url_for(:action => 'complete_get_data', :only_path => false)
     @moje_id.realm = url_for(:action => 'index', :id => nil, :only_path => false)
+
+    # Redirect to generated url
     redirect_to @moje_id.redirect_url
   end
 
@@ -30,7 +36,7 @@ class ConsumerController < ApplicationController
   end
 
 
-  # EXAMPLE HOW TO UPDATE DATA TO MOJEID
+  # Example how to update data to mojeID
   def start_update_data
     begin
       identifier = params[:openid_identifier]
@@ -52,6 +58,10 @@ class ConsumerController < ApplicationController
     reflect_moje_id_response_status
     render :action => 'index'
   end
+
+
+
+  
 
   private
 
