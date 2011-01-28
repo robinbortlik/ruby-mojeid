@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Bortlik"]
-  s.date = %q{2011-01-27}
+  s.date = %q{2011-01-28}
   s.description = %q{This gem extend ruby-openid gem}
   s.email = %q{robinbortlik@gmail.com}
   s.extra_rdoc_files = [
@@ -26,28 +26,21 @@ Gem::Specification.new do |s|
     "VERSION",
     "examples/README",
     "examples/rails_openid/Gemfile",
+    "examples/rails_openid/Gemfile.lock",
     "examples/rails_openid/README",
     "examples/rails_openid/Rakefile",
     "examples/rails_openid/app/controllers/application_controller.rb",
     "examples/rails_openid/app/controllers/consumer_controller.rb",
-    "examples/rails_openid/app/controllers/login_controller.rb",
-    "examples/rails_openid/app/controllers/server_controller.rb",
-    "examples/rails_openid/app/helpers/application_helper.rb",
-    "examples/rails_openid/app/helpers/login_helper.rb",
-    "examples/rails_openid/app/helpers/server_helper.rb",
     "examples/rails_openid/app/views/consumer/index.rhtml",
     "examples/rails_openid/app/views/layouts/server.rhtml",
-    "examples/rails_openid/app/views/login/index.rhtml",
-    "examples/rails_openid/app/views/server/decide.rhtml",
     "examples/rails_openid/config/boot.rb",
-    "examples/rails_openid/config/database.yml",
+    "examples/rails_openid/config/database.sample.yml",
     "examples/rails_openid/config/environment.rb",
     "examples/rails_openid/config/environments/development.rb",
     "examples/rails_openid/config/environments/production.rb",
     "examples/rails_openid/config/environments/test.rb",
     "examples/rails_openid/config/preinitializer.rb",
     "examples/rails_openid/config/routes.rb",
-    "examples/rails_openid/log/development.log",
     "examples/rails_openid/public/.htaccess",
     "examples/rails_openid/public/404.html",
     "examples/rails_openid/public/500.html",
@@ -77,6 +70,7 @@ Gem::Specification.new do |s|
     "examples/rails_openid/test/functional/login_controller_test.rb",
     "examples/rails_openid/test/functional/server_controller_test.rb",
     "examples/rails_openid/test/test_helper.rb",
+    "lib/available_attributes.rb",
     "lib/ruby-mojeid.rb",
     "ruby-mojeid.gemspec",
     "test/helper.rb",
@@ -90,11 +84,6 @@ Gem::Specification.new do |s|
   s.test_files = [
     "examples/rails_openid/app/controllers/application_controller.rb",
     "examples/rails_openid/app/controllers/consumer_controller.rb",
-    "examples/rails_openid/app/controllers/login_controller.rb",
-    "examples/rails_openid/app/controllers/server_controller.rb",
-    "examples/rails_openid/app/helpers/application_helper.rb",
-    "examples/rails_openid/app/helpers/login_helper.rb",
-    "examples/rails_openid/app/helpers/server_helper.rb",
     "examples/rails_openid/config/boot.rb",
     "examples/rails_openid/config/environment.rb",
     "examples/rails_openid/config/environments/development.rb",
