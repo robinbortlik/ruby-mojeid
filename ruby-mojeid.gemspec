@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-mojeid}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Bortlik"]
-  s.date = %q{2011-01-28}
+  s.date = %q{2011-01-31}
   s.description = %q{This gem extend ruby-openid gem}
   s.email = %q{robinbortlik@gmail.com}
   s.extra_rdoc_files = [
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
     "examples/rails_openid/app/controllers/application_controller.rb",
     "examples/rails_openid/app/controllers/consumer_controller.rb",
     "examples/rails_openid/app/views/consumer/index.rhtml",
-    "examples/rails_openid/app/views/layouts/server.rhtml",
     "examples/rails_openid/config/boot.rb",
     "examples/rails_openid/config/database.sample.yml",
     "examples/rails_openid/config/environment.rb",
