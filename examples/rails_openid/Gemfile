@@ -4,4 +4,4 @@ source 'http://gems.github.com'
 
 gem 'rails', '2.3.9'
 gem "mysql", '2.7'
-gem 'ruby-mojeid', :path => "/home/robin/rails_workspace/ruby-mojeid"
+gem 'ruby-mojeid'

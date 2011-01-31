@@ -75,8 +75,11 @@ class MojeID
   end
 
   # Add attributes you would like to read about user, to request.
+  # You can pass attribute as array and change options like ns_alias or require.
+  # * example: @moje_id.add_attributes(['http://axschema.org/namePerson', nil, false])
+  # * or simple : @moje_id.add_attributes('http://axschema.org/namePerson')
   def add_attributes(attributes = [])
-    attributes.each{ |attribute| add_attribute(attribute)}
+    attributes.each{ |attribute| attribute.is_a?(Array) ? add_attribute(attribute[0], attribute[1], attribute[2]) : add_attribute(attribute)}
   end
 
   # Add attributes and they values which you would like to update user profile, to request.
@@ -134,9 +137,9 @@ class MojeID
   end
 
   # Pack attribute to request when you would like to get attribute
-  def add_attribute(attribute)
+  def add_attribute(attribute, ns_alais = nil, required = false)
     if MojeID.is_attribute_available?(attribute)
-      fetch_request.add(OpenID::AX::AttrInfo.new(attribute))
+      fetch_request.add(OpenID::AX::AttrInfo.new(attribute, ns_alais, required))
       bundle_to_request
     end
   end
