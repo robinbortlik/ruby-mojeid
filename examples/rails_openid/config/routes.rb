@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '', :controller => 'consumer'
 
+  map.xrds 'xrds', :controller => "consumer", :action => "xrds"
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
   # Install the default route as the lowest priority.

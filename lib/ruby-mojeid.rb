@@ -1,9 +1,10 @@
 require 'openid'
 require 'openid/extensions/ax'
+require 'xrds_helpers'
 require 'available_attributes'
 
 class MojeID
-  attr_accessor :moje_id_request, :moje_id_response, :fetch_request, :fetch_response, :realm, :return_to
+  attr_accessor :moje_id_request, :moje_id_response, :fetch_request, :fetch_response, :realm, :return_to, :xrds_result
 
   # Prepare request for openid server 
   # 

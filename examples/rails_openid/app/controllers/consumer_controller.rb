@@ -24,6 +24,9 @@ class ConsumerController < ApplicationController
     @moje_id.return_to = url_for(:action => 'complete_get_data', :only_path => false)
     @moje_id.realm = url_for(:action => 'index', :id => nil, :only_path => false)
 
+
+    @moje_id.xrds_result = OpenID::Yadis::DiscoveryResult.new(@moje_id.return_to)
+    
     # Redirect to generated url
     redirect_to @moje_id.redirect_url
   end
@@ -60,7 +63,9 @@ class ConsumerController < ApplicationController
   end
 
 
-
+  def xrds
+    render :inline => xrds_response(url_for(:action => 'complete_get_data', :only_path => false))
+  end
   
 
   private
